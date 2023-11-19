@@ -1,5 +1,6 @@
 const inputString = document.getElementById('text-string');
 const tagName = document.getElementById('tag-name');
+const delimiter = document.getElementById('delimiter');
 const spaces = document.getElementById('spaces')
 const maxTags = document.getElementById('maxTags')
 
@@ -31,7 +32,7 @@ const runScript = function(){
             tag = ['',''] 
         }
 
-        const text =  ` `.repeat(spaces.value) + tag[0] + keptTags.join(' ') + tag[1];
+        const text =  ` `.repeat(spaces.value) + tag[0] + keptTags.join(delimiter.value ? delimiter.value : ' ') + tag[1];
         const listItem = Object.assign(document.createElement('li'))
 
         listItem.append(text);
