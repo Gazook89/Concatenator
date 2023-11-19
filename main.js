@@ -16,8 +16,8 @@ const runScript = function(){
 
     for(let arr in arrayOfArrays){
         const splitArr = arrayOfArrays[arr].split(' ');
-        const keptTags = splitArr.slice(0, maxTags.value);
-        const discardTags = splitArr.slice(maxTags.value + 1);
+        const keptTags = maxTags.value > 0 ? splitArr.slice(0, maxTags.value) : splitArr;
+        const discardTags = maxTags.value > 0 ? splitArr.slice(maxTags.value + 1) : [];
         output.data.keptTags.push(keptTags);
         output.data.discardTags.push(discardTags);
 
