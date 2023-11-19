@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang='en'>
+    <head>
+        <meta charset='utf-8'>
+        <meta name='description' content='Description of Site'>
+        <meta name='viewport' content='width=device-width, initial-scale=1'>
+        <link rel='stylesheet' href='styles.css'>
+        <title>Concatenator</title>
+    </head>
+    <body>
+        <header>
+            <h1>Concatenator</h1>
+        </header>
+        <main>
+            <label for='tag-name'>XML Tag<input id='tag-name' type='text' /></label>
+            <label for='text-string'>Word List<input id='text-string' type='text' /></label>
+            <label for='spaces'>Spaces<input id='spaces' type='number' /></label>
+            <label for='maxTags'>Max Tags per Row<input id='maxTags' type='number' /></label>
+            <button type='button' onclick='runScript()'>Concatenate</button>
+            <button type='button' onclick='clearInput()'>Clear Input</button>
+            <button type='button' onclick='clearOutput()'>Clear Output</button>
+
+            <ol id='output-list' contenteditable='true'>
+            </ol>
+
+        </main>
+        <footer>
+
+        </footer>
+    </body>
+
+    <script src='main.js'></script>
+</html>
