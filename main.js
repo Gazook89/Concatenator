@@ -21,7 +21,17 @@ const runScript = function(){
         output.data.keptTags.push(keptTags);
         output.data.discardTags.push(discardTags);
 
-        const text =  ` `.repeat(spaces.value) + '\<' + tagName.value + '>' + keptTags.join(' ') + '\</' + tagName.value + '>';
+        let tag = [];
+        if(tagName.value.length > 0){
+            tag = [
+                '\<' + tagName.value + '>',
+                '\</' + tagName.value + '>'
+            ]
+        } else {
+            tag = ['',''] 
+        }
+
+        const text =  ` `.repeat(spaces.value) + tag[0] + keptTags.join(' ') + tag[1];
         const listItem = Object.assign(document.createElement('li'))
 
         listItem.append(text);
