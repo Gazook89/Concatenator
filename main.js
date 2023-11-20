@@ -1,6 +1,8 @@
 const inputString = document.getElementById('text-string');
 const tagName = document.getElementById('tag-name');
-const delimiter = document.getElementById('delimiter');
+const rowDelimiter = document.getElementById('rowDelimiter');
+const tagDelimiter = document.getElementById('tagDelimiter');
+const newTagDelimiter = document.getElementById('newTagDelimiter');
 const spaces = document.getElementById('spaces')
 const maxTags = document.getElementById('maxTags')
 
@@ -8,7 +10,7 @@ const outputList = document.getElementById('output-list');
 
 
 const runScript = function(){
-    const arrayOfArrays = inputString.value.split(', ');
+    const arrayOfArrays = inputString.value.split(rowDelimiter.value);
 
     let output = {
         data: {keptTags: [], discardTags: []},
@@ -16,7 +18,7 @@ const runScript = function(){
     };
 
     for(let arr in arrayOfArrays){
-        const splitArr = arrayOfArrays[arr].split(' ');
+        const splitArr = arrayOfArrays[arr].split(tagDelimiter.value || ' ');
         const keptTags = maxTags.value > 0 ? splitArr.slice(0, maxTags.value) : splitArr;
         const discardTags = maxTags.value > 0 ? splitArr.slice(maxTags.value + 1) : [];
         output.data.keptTags.push(keptTags);
@@ -32,7 +34,7 @@ const runScript = function(){
             tag = ['',''] 
         }
 
-        const text =  ` `.repeat(spaces.value) + tag[0] + keptTags.join(delimiter.value ? delimiter.value : ' ') + tag[1];
+        const text =  ` `.repeat(spaces.value) + tag[0] + keptTags.join(newTagDelimiter.value ? newTagDelimiter.value : ' ') + tag[1];
         const listItem = Object.assign(document.createElement('li'))
 
         listItem.append(text);
@@ -51,4 +53,16 @@ const clearInput = function(){
 
 const clearOutput = function(){
     outputList.replaceChildren();
+}
+
+const setPreset = function(preset){
+    if(preset == 'Krane'){
+        tagName.value = 'item';
+        rowDelimiter.value = ' ';
+        tagDelimiter.value = '-';
+        newTagDelimiter.value = ' ';
+        spaces.value = 4;
+        inputString.focus();
+    }
+
 }
