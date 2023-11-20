@@ -14,6 +14,19 @@ label {
     }
 }
 
-li {
-    white-space: break-spaces;
+
+
+ol {
+    counter-reset: item;
+    border-radius: 15px;
+    background: lavender;
+    padding: 20px 0;
+    font-family: monospace;
+    & li {
+        white-space: break-spaces;
+        counter-increment: item;
+        &::marker {
+            content: counter(item);
+        }
+    }
 }
