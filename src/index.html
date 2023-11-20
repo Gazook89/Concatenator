@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang='en'>
+    <head>
+        <meta charset='utf-8'>
+        <meta name='description' content='Description of Site'>
+        <meta name='viewport' content='width=device-width, initial-scale=1'>
+        <link rel='stylesheet' href='styles.css'>
+        <title>Concatenator</title>
+    </head>
+    <body>
+        <header>
+            <h1>Concatenator</h1>
+        </header>
+        <main>
+            <h2>Presets</h2>
+            <button class='preset' type='button' onclick='setPreset("Krane")'>Krane</button>
+            <h2>Input Settings</h2>
+            <label for='text-string'>Word List<input id='text-string' type='text' /></label>
+            <label for='tag-name'>XML Tag<input id='tag-name' type='text' /></label>
+            <label for='rowDelimiter'>Split Row On<input id='rowDelimiter' type='text' /></label>
+            <label for='tagDelimiter'>Split Tags On<input id='tagDelimiter' type='text' /></label>
+            <label for='newTagDelimiter'>New Tag Delimiter<input id='newTagDelimiter' type='text' /></label>
+            <label for='spaces'>Spaces<input id='spaces' type='number' /></label>
+            <label for='maxTags'>Max Tags per Row<input id='maxTags' type='number' /></label>
+            <button id='clear-input' class='clear' type='button' onclick='clearInput()'>Clear Input</button>
+
+            <h2>Run</h2>
+            <button id='concatenate' class='submit' type='button' onclick='runScript()'>Concatenate</button>
+
+            <ol id='output-list' contenteditable='true'>
+            </ol>
+            <button id='clear-output' class='clear' type='button' onclick='clearOutput()'>Clear Output</button>
+
+        </main>
+        <footer>
+
+        </footer>
+    </body>
+
+    <script src='main.js'></script>
+</html>
