@@ -12,6 +12,9 @@ label {
     & > * {
         flex: 1 1 40ch;
     }
+    &[for='text-string']{
+        font-weight: bold;
+    }
 }
 
 
