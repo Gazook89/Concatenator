@@ -10,7 +10,7 @@ const outputList = document.getElementById('output-list');
 
 
 const runScript = function(){
-    const arrayOfArrays = inputString.value.split(rowDelimiter.value);
+    const arrayOfArrays = inputString.value.split(rowDelimiter.value || ',');
 
     let output = {
         data: {keptTags: [], discardTags: []},

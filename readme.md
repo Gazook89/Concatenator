@@ -1,11 +1,11 @@
 # Concatenator
 
-Concatenator is a basic tool to help with formatting lists of tags for either roll20 file names or a random generator creator.
+Concatenator is a basic tool to help with formatting lists of tags for either roll20 file names or a random generator creator like Jazza's Arty Games app.
 
 ## How to use
 
+- Word List: (string) - the words that will be used for your tags.  The string is split by commas (by default) into individual rows, and those rows are divided into individual words by spaces (by default).
 - XML Tag: (string) - will place the input inside `<` `>` brackets on either side of your tag sets.  If nothing entered, it will leave the brackets out.
-- Word List: (string) - the words that will be used for your tags.  The string is split by commas into individual rows, and those rows are divided into individual words by spaces (by default).
 - Delimiter (string) - set a delimiter, or character that separates tags within a row.  Default is ` `.  Useful if creating files names like `House-Spider-Cat.jpg`.
 - Spaces: (number) - The value here will determine how many spaces at the beginning of reach row, if pasting into a text editor.
 - Max Tags per Row: (number) - You can trim the number of tags in a row.  If left empty there is no limit.
